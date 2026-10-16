@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SHKTN.GAMING.SHOW</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            background: #050505;
+            font-family: Tahoma, Arial, sans-serif;
+            color: white;
+            overflow-x: hidden;
+        }
+
+        .gaming-box {
+            position: relative;
+            width: 100%;
+            max-width: 760px;
+            padding: 45px 30px;
+            text-align: center;
+            background: linear-gradient(145deg, #101010, #080808);
+            border: 2px solid #00ff66;
+            border-radius: 18px;
+            box-shadow:
+                0 0 15px #00ff6655,
+                0 0 35px #00ff6622,
+                inset 0 0 20px #ff003322;
+            animation: glow 3s infinite alternate;
+        }
+
+        @keyframes glow {
+            from {
+                box-shadow: 0 0 12px #00ff6644,
+                            0 0 25px #ff003322;
+            }
+            to {
+                box-shadow: 0 0 25px #00ff6688,
+                            0 0 35px #ff003344;
+            }
+        }
+
+        .tag {
+            color: #00ff66;
+            font-size: 13px;
+            letter-spacing: 3px;
+            margin-bottom: 15px;
+        }
+
+        h1 {
+            color: #ff1744;
+            font-size: clamp(25px, 5vw, 42px);
+            text-shadow: 0 0 8px #ff0033, 0 0 22px #ff003366;
+            margin: 10px 0 25px;
+        }
+
+        .message {
+            color: #ff3b52;
+            font-size: 17px;
+            line-height: 2.4;
+            text-shadow: 0 0 7px #ff003322;
+        }
+
+        .green {
+            color: #00ff66;
+            font-weight: bold;
+        }
+
+        .divider {
+            height: 2px;
+            width: 65%;
+            margin: 25px auto;
+            background: linear-gradient(
+                to right,
+                transparent,
+                #00ff66,
+                #ff1744,
+                transparent
+            );
+        }
+
+        .bale-button {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 16px 30px;
+            background: #00ff66;
+            color: #050505;
+            font-weight: bold;
+            font-size: 17px;
+            text-decoration: none;
+            border-radius: 8px;
+            border: 2px solid #00ff66;
+            box-shadow: 0 0 15px #00ff6666;
+            transition: 0.25s;
+        }
+
+        .bale-button:hover {
+            background: #ff1744;
+            color: white;
+            border-color: #ff1744;
+            box-shadow: 0 0 22px #ff1744aa;
+            transform: translateY(-3px);
+        }
+
+        .footer {
+            margin-top: 30px;
+            color: #888;
+            font-size: 12px;
+        }
+
+        .footer span {
+            color: #00ff66;
+        }
+
+        @media (max-width: 480px) {
+            .gaming-box {
+                padding: 30px 18px;
+            }
+
+            .message {
+                font-size: 15px;
+            }
+
+            .bale-button {
+                padding: 14px 20px;
+                font-size: 15px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <main class="gaming-box">
+        <div class="tag">★ GAMING COMMUNITY ★</div>
+
+        <h1>SHKTN.GAMING.SHOW</h1>
+
+        <div class="divider"></div>
+
+        <div class="message">
+            سلام بچه‌ها، چطورید؟ 🎮<br>
+
+            این سایت برای کانال
+            <span class="green">SHKTN.GAMING.SHOW</span>
+            هست.<br>
+
+            ما نیاز به حمایت‌های شما داریم.<br>
+
+            شما با دیدن ویدیوهای ما و لایک و فالو کردن،
+            به ما انرژی می‌دید. ❤️<br>
+
+            این سایت رو <span class="green">SHERVAN</span>
+            و <span class="green">KASRA</span>
+            با همکاری همدیگه ساخته‌اند.<br>ممنون از شما دوستان عزیز! 🔥
+        </div>
+
+        <div class="divider"></div>
+
+        <a
+            class="bale-button"
+            href="https://ble.ir/SHgaming"
+            target="_blank"
+            rel="noopener noreferrer"
+        >
+            🚀 ورود به کانال ما در بله
+        </a>
+
+        <div class="footer">
+            MADE WITH ❤️ BY <span>SHERVAN & KASRA</span>
+        </div>
+    </main>
+</body>
+</html>
