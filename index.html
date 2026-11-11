@@ -1,183 +1,109 @@
-<!DOCTYPE html>
-<html lang="fa" dir="rtl">
+<!doctype html>
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SHKTN.GAMING.SHOW</title>
-
-    <style>
-        * {
-            box-sizing: border-box;
-        }
-
-        body {
-            margin: 0;
-            min-height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            padding: 20px;
-            background: #050505;
-            font-family: Tahoma, Arial, sans-serif;
-            color: white;
-            overflow-x: hidden;
-        }
-
-        .gaming-box {
-            position: relative;
-            width: 100%;
-            max-width: 760px;
-            padding: 45px 30px;
-            text-align: center;
-            background: linear-gradient(145deg, #101010, #080808);
-            border: 2px solid #00ff66;
-            border-radius: 18px;
-            box-shadow:
-                0 0 15px #00ff6655,
-                0 0 35px #00ff6622,
-                inset 0 0 20px #ff003322;
-            animation: glow 3s infinite alternate;
-        }
-
-        @keyframes glow {
-            from {
-                box-shadow: 0 0 12px #00ff6644,
-                            0 0 25px #ff003322;
-            }
-            to {
-                box-shadow: 0 0 25px #00ff6688,
-                            0 0 35px #ff003344;
-            }
-        }
-
-        .tag {
-            color: #00ff66;
-            font-size: 13px;
-            letter-spacing: 3px;
-            margin-bottom: 15px;
-        }
-
-        h1 {
-            color: #ff1744;
-            font-size: clamp(25px, 5vw, 42px);
-            text-shadow: 0 0 8px #ff0033, 0 0 22px #ff003366;
-            margin: 10px 0 25px;
-        }
-
-        .message {
-            color: #ff3b52;
-            font-size: 17px;
-            line-height: 2.4;
-            text-shadow: 0 0 7px #ff003322;
-        }
-
-        .green {
-            color: #00ff66;
-            font-weight: bold;
-        }
-
-        .divider {
-            height: 2px;
-            width: 65%;
-            margin: 25px auto;
-            background: linear-gradient(
-                to right,
-                transparent,
-                #00ff66,
-                #ff1744,
-                transparent
-            );
-        }
-
-        .bale-button {
-            display: inline-block;
-            margin-top: 20px;
-            padding: 16px 30px;
-            background: #00ff66;
-            color: #050505;
-            font-weight: bold;
-            font-size: 17px;
-            text-decoration: none;
-            border-radius: 8px;
-            border: 2px solid #00ff66;
-            box-shadow: 0 0 15px #00ff6666;
-            transition: 0.25s;
-        }
-
-        .bale-button:hover {
-            background: #ff1744;
-            color: white;
-            border-color: #ff1744;
-            box-shadow: 0 0 22px #ff1744aa;
-            transform: translateY(-3px);
-        }
-
-        .footer {
-            margin-top: 30px;
-            color: #888;
-            font-size: 12px;
-        }
-
-        .footer span {
-            color: #00ff66;
-        }
-
-        @media (max-width: 480px) {
-            .gaming-box {
-                padding: 30px 18px;
-            }
-
-            .message {
-                font-size: 15px;
-            }
-
-            .bale-button {
-                padding: 14px 20px;
-                font-size: 15px;
-            }
-        }
-    </style>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#070a09">
+<title>SHKTN.GAMING.SHOW</title>
+<style>
+:root{--green:#39ff14;--red:#ff2638;--bg:#070a09;--panel:#101713;--line:#24372a}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:radial-gradient(ellipse at 50% -15%,#17351e 0,transparent 45%),var(--bg);color:#f4fff5;font-family:Arial,Helvetica,sans-serif;overflow-x:hidden}
+body:before{content:"";position:fixed;inset:0;pointer-events:none;z-index:0;background:repeating-linear-gradient(0deg,transparent 0 3px,#ffffff04 4px 5px)}
+/* Moving neon rails around the viewport */
+.neon-frame{position:fixed;inset:0;pointer-events:none;z-index:20;--glow:0 0 8px var(--green),0 0 22px #39ff1480}
+.neon-frame:before,.neon-frame:after{content:"";position:absolute;filter:drop-shadow(0 0 7px currentColor);opacity:.95}
+.neon-frame:before{left:0;right:0;top:0;height:3px;background:linear-gradient(90deg,transparent,var(--green),var(--red),var(--green),transparent);background-size:220% 100%;animation:railX 5s linear infinite;box-shadow:var(--glow)}
+.neon-frame:after{top:0;bottom:0;right:0;width:3px;background:linear-gradient(180deg,transparent,var(--red),var(--green),var(--red),transparent);background-size:100% 220%;animation:railY 5s linear infinite;box-shadow:0 0 8px var(--red),0 0 22px #ff263880}
+.rail-left,.rail-bottom{position:absolute;background:linear-gradient(90deg,transparent,var(--red),var(--green),transparent);filter:drop-shadow(0 0 8px var(--green))}
+.rail-left{left:0;top:0;bottom:0;width:3px;background:linear-gradient(180deg,transparent,var(--green),var(--red),var(--green),transparent);background-size:100% 220%;animation:railY 6s linear infinite}
+.rail-bottom{bottom:0;left:0;right:0;height:3px;background-size:220% 100%;animation:railX 6s linear infinite}
+@keyframes railX{to{background-position:220% 0}}@keyframes railY{to{background-position:0 220%}}
+header{position:relative;z-index:1;text-align:center;padding:65px 18px 38px;border-bottom:1px solid #203326}
+.logo{font-size:clamp(30px,5vw,58px);font-weight:1000;letter-spacing:1px;color:var(--green);text-shadow:0 0 8px #39ff14,0 0 25px #39ff1470}
+.sub{margin-top:12px;color:#b8c9bb;font-size:12px;font-weight:800;letter-spacing:4px}\n.tagline{margin-top:13px;color:var(--red);font-size:clamp(12px,2vw,16px);font-weight:1000;letter-spacing:1.5px;text-shadow:0 0 10px #ff263866}
+.live{display:inline-flex;align-items:center;gap:8px;margin-top:22px;border:1px solid #31563a;border-radius:99px;padding:8px 14px;color:#d9ffdc;font-size:11px;letter-spacing:2px;background:#0d1710}
+.dot{width:8px;height:8px;background:var(--red);border-radius:50%;box-shadow:0 0 10px var(--red);animation:pulse 1.1s infinite}
+@keyframes pulse{50%{opacity:.25;transform:scale(.7)}}
+main{position:relative;z-index:1;width:min(1180px,92%);margin:38px auto 70px}
+.section-head{display:flex;justify-content:space-between;align-items:center;gap:15px;flex-wrap:wrap;margin-bottom:22px}
+h1{margin:0;font-size:22px;letter-spacing:2px}h1 span{color:var(--green)}
+.search{background:#0d1410;border:1px solid #294431;color:white;padding:12px 15px;border-radius:9px;min-width:min(270px,100%);outline:none}
+.search:focus{border-color:var(--green);box-shadow:0 0 0 2px #39ff1420}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(245px,1fr));gap:19px}
+.card{background:linear-gradient(145deg,#15221a,#0d130f);border:1px solid #294431;border-radius:15px;overflow:hidden;transition:.22s;box-shadow:0 12px 35px #0008}
+.card:hover{transform:translateY(-6px);border-color:var(--green);box-shadow:0 0 22px #39ff1425,0 15px 35px #0009}
+.cover{height:168px;position:relative;overflow:hidden;display:flex;align-items:center;justify-content:center;background:radial-gradient(circle at 70% 25%,var(--c2),transparent 38%),linear-gradient(135deg,var(--c1),#080b09 75%)}
+.cover:before{content:"";position:absolute;width:185px;height:185px;border:1px solid #ffffff32;border-radius:50%;box-shadow:0 0 0 18px #ffffff09,0 0 0 38px #ffffff06;right:-35px;top:-72px}
+.cover:after{content:"";position:absolute;inset:0;background:linear-gradient(110deg,transparent 30%,#ffffff16 48%,transparent 60%);transform:translateX(-120%);transition:.6s}
+.card:hover .cover:after{transform:translateX(120%)}
+.cover-mark{position:relative;z-index:1;text-align:center;text-shadow:0 4px 15px #000;font-weight:1000;transform:skew(-7deg)}
+.cover-mark small{display:block;font-size:10px;letter-spacing:5px;color:#e9ffe9}
+.cover-mark strong{display:block;font-size:clamp(28px,4vw,40px);line-height:1.05;color:white}
+.cover-mark em{display:block;font-size:12px;letter-spacing:3px;color:var(--green);font-style:normal;margin-top:7px}
+.info{padding:17px}
+.name{font-size:14px;font-weight:900;letter-spacing:.5px;min-height:34px}
+.actions{display:flex;gap:9px;margin-top:14px}
+.download{display:block;text-decoration:none;text-align:center;flex:1;padding:11px 10px;border-radius:8px;background:var(--green);color:#071007;font-weight:1000;font-size:11px;letter-spacing:1px;transition:.2s}
+.download:hover{background:#fff;box-shadow:0 0 18px #39ff1480}
+.tag{border:1px solid #38523d;color:#b9d8bf;padding:10px;border-radius:8px;font-size:10px}
+footer{position:relative;z-index:1;text-align:center;color:#8fa294;border-top:1px solid #1c2b20;padding:25px;font-size:11px;letter-spacing:2px}
+.cursor-aura{position:fixed;left:0;top:0;width:48px;height:48px;border:2px solid var(--red);border-radius:50%;pointer-events:none;z-index:50;transform:translate(-50%,-50%);mix-blend-mode:screen;box-shadow:0 0 10px var(--red),0 0 24px #ff263855,inset 0 0 10px #ff263866;transition:width .16s,height .16s,border-color .16s;opacity:0}
+.cursor-aura:before{content:"";position:absolute;inset:7px;border:1px solid var(--green);border-radius:50%;box-shadow:0 0 9px var(--green)}
+.cursor-aura:after{content:"";position:absolute;width:5px;height:5px;background:var(--red);border-radius:50%;left:50%;top:50%;transform:translate(-50%,-50%);box-shadow:0 0 10px var(--red)}
+@media(pointer:fine){body{cursor:crosshair}}
+@media(max-width:600px){header{padding-top:45px}.sub{letter-spacing:2px}.cover{height:150px}}
+</style>
 </head>
-
 <body>
-    <main class="gaming-box">
-        <div class="tag">★ GAMING COMMUNITY ★</div>
-
-        <h1>SHKTN.GAMING.SHOW</h1>
-
-        <div class="divider"></div>
-
-        <div class="message">
-            سلام بچه‌ها، چطورید؟ 🎮<br>
-
-            این سایت برای کانال
-            <span class="green">SHKTN.GAMING.SHOW</span>
-            هست.<br>
-
-            ما نیاز به حمایت‌های شما داریم.<br>
-
-            شما با دیدن ویدیوهای ما و لایک و فالو کردن،
-            به ما انرژی می‌دید. ❤️<br>
-
-            این سایت رو <span class="green">SHERVAN</span>
-            و <span class="green">KASRA</span>
-            با همکاری همدیگه ساخته‌اند.<br>ممنون از شما دوستان عزیز! 🔥
-        </div>
-
-        <div class="divider"></div>
-
-        <a
-            class="bale-button"
-            href="https://ble.ir/SHgaming"
-            target="_blank"
-            rel="noopener noreferrer"
-        >
-            🚀 ورود به کانال ما در بله
-        </a>
-
-        <div class="footer">
-            MADE WITH ❤️ BY <span>SHERVAN & KASRA</span>
-        </div>
-    </main>
+<div class="neon-frame"><i class="rail-left"></i><i class="rail-bottom"></i></div>
+<div class="cursor-aura" id="aura"></div>
+<header>
+  <div class="logo">SHKTN.GAMING.SHOW</div>
+  <div class="sub">SHERVANS SITE</div>
+  <div class="tagline">!DOWNLOAD THE BEST CS IN THIS SITE!</div>
+</header>
+<main>
+  <div class="section-head">
+    <h1><span>COUNTER</span> STRIKES</h1>
+    <input class="search" id="search" type="search" placeholder="Search editions...">
+  </div>
+  <section class="grid" id="grid">
+    <article class="card" data-name="cs1.6 source edition"><div class="cover" style="--c1:#172b1b;--c2:#5c9d31"><div class="cover-mark"><small>COUNTER STRIKE</small><strong>1.6</strong><em>SOURCE EDITION</em></div></div><div class="info"><div class="name">CS1.6 SOURCE EDITION</div><div class="actions"><a class="download" href="https://down-cs.su/download.php?id=source&amp;type=1" target="_blank" rel="noopener">DOWNLOAD</a><span class="tag">PC</span></div></div></article>
+    <article class="card" data-name="cs1.6 condition zero"><div class="cover" style="--c1:#26313c;--c2:#9b783c"><div class="cover-mark"><small>COUNTER STRIKE</small><strong>ZERO</strong><em>CONDITION ZERO</em></div></div><div class="info"><div class="name">CS1.6 CONDITION ZERO</div><div class="actions"><a class="download" href="https://down-cs.su/download/139/direct" target="_blank" rel="noopener">DOWNLOAD</a><span class="tag">PC</span></div></div></article>
+    <article class="card" data-name="cs1.6 winter edition"><div class="cover" style="--c1:#142a38;--c2:#8ac9dc"><div class="cover-mark"><small>COUNTER STRIKE</small><strong>WINTER</strong><em>EDITION</em></div></div><div class="info"><div class="name">CS1.6 WINTER EDITION</div><div class="actions"><a class="download" href="https://down-cs.su/download.php?id=winter&amp;type=1" target="_blank" rel="noopener">DOWNLOAD</a><span class="tag">PC</span></div></div></article>
+    <article class="card" data-name="cs1.6 csgo edition"><div class="cover" style="--c1:#29231d;--c2:#c68b38"><div class="cover-mark"><small>COUNTER STRIKE</small><strong>CS:GO</strong><em>EDITION</em></div></div><div class="info"><div class="name">CS1.6 CSGO EDITION</div><div class="actions"><a class="download" href="https://down-cs.su/download.php?id=csgo&amp;type=1" target="_blank" rel="noopener">DOWNLOAD</a><span class="tag">PC</span></div></div></article>
+    <article class="card" data-name="cs1.6 warzone edition"><div class="cover" style="--c1:#301a1d;--c2:#b62d37"><div class="cover-mark"><small>COUNTER STRIKE</small><strong>WARZONE</strong><em>EDITION</em></div></div><div class="info"><div class="name">CS1.6 WARZONE EDITION</div><div class="actions"><a class="download" href="https://down-cs.su/download.php?id=warzone&amp;type=1" target="_blank" rel="noopener">DOWNLOAD</a><span class="tag">PC</span></div></div></article>
+    <article class="card" data-name="cs1.8 best"><div class="cover" style="--c1:#182c31;--c2:#4bb7a4"><div class="cover-mark"><small>COUNTER STRIKE</small><strong>1.8</strong><em>BEST EDITION</em></div></div><div class="info"><div class="name">CS1.8 (BEST)</div><div class="actions"><a class="download" href="https://down-cs.su/download/78/direct" target="_blank" rel="noopener">DOWNLOAD</a><span class="tag">PC</span></div></div></article>
+    <article class="card" data-name="cs1.6 pro edition"><div class="cover" style="--c1:#202020;--c2:#45a83a"><div class="cover-mark"><small>COUNTER STRIKE</small><strong>PRO</strong><em>EDITION</em></div></div><div class="info"><div class="name">CS1.6 PRO EDITION</div><div class="actions"><a class="download" href="https://down-cs.su/download/172/direct" target="_blank" rel="noopener">DOWNLOAD</a><span class="tag">PC</span></div></div></article>
+    <article class="card" data-name="cs1.6 fortnite edition"><div class="cover" style="--c1:#25203d;--c2:#a04ec6"><div class="cover-mark"><small>COUNTER STRIKE</small><strong>FORTNITE</strong><em>EDITION</em></div></div><div class="info"><div class="name">CS1.6 FORTNITE EDITION</div><div class="actions"><a class="download" href="https://down-cs.su/download.php?id=fortnite&amp;type=1" target="_blank" rel="noopener">DOWNLOAD</a><span class="tag">PC</span></div></div></article>
+  </section>
+</main>
+<footer>SHKTN.GAMING.SHOW &nbsp; | &nbsp; SHERVAN + KASRA</footer>
+<script>
+const aura=document.getElementById('aura');
+let mx=0,my=0,ax=0,ay=0,hasPointer=false;
+window.addEventListener('pointermove',e=>{
+  if(e.pointerType==='touch') return;
+  mx=e.clientX; my=e.clientY;
+  if(!hasPointer){ax=mx;ay=my;hasPointer=true;}
+  aura.style.opacity='1';
+},{passive:true});
+window.addEventListener('pointerleave',()=>{aura.style.opacity='0'});
+function follow(){
+  if(hasPointer){
+    ax+=(mx-ax)*.28; ay+=(my-ay)*.28;
+    aura.style.left=ax+'px'; aura.style.top=ay+'px';
+  }
+  requestAnimationFrame(follow);
+}
+follow();
+document.querySelectorAll('.card').forEach(card=>{
+  card.addEventListener('mouseenter',()=>{aura.style.width='72px';aura.style.height='72px';aura.style.borderColor='var(--green)'});
+  card.addEventListener('mouseleave',()=>{aura.style.width='48px';aura.style.height='48px';aura.style.borderColor='var(--red)'});
+});
+document.getElementById('search').addEventListener('input',e=>{const q=e.target.value.toLowerCase();document.querySelectorAll('.card').forEach(c=>c.hidden=!c.dataset.name.includes(q))});
+</script>
 </body>
 </html>
